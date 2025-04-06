@@ -1,10 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+       
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Fira Sans", sans-serif;
 }
 
 body {
@@ -17,9 +20,37 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 50px;
-    background: transparent;
+    /* padding: 20px 50px; */
+    background: white;
     background-color: #b3d1fa;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+    transition: background 0.3s ease;
+}
+
+@keyframes header-color-change {
+    0%{background: #b3d1fa;}
+    10%{background: white;}
+    
+}
+@scroll-timeline header-scroll {
+    source: selector(body);
+    orientation: vertical;
+  }
+  
+  header {
+    animation: navbar-color-change linear forwards;
+    animation-timeline: navbar-scroll;
+  }
+
+
+
+
+header.scrolled{
+    padding: 0.5rem 1rem;
 }
 
 .logo {
@@ -56,11 +87,20 @@ nav ul li a.active, nav ul li a:hover {
     justify-content: space-between;
     padding: 100px 50px;
     background-color: #b3d1fa;
+    
 }
 
 .hero-text {
     width: 50%;
 }
+
+#hero-main-text{
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 900;
+    font-style: normal; 
+
+}
+
 
 .hero-text h1 {
     font-size: 48px;
@@ -221,7 +261,8 @@ html {
     border-radius: 5px;
     text-decoration: none;
     font-weight: 600;
-    transition: background 0.3s;
+    transition: 0.3s;
+   
 }
 
 .btn:hover {
@@ -260,6 +301,7 @@ html {
     text-align: center;
     padding: 80px 10%;
     background: #F8F9FC;
+    font-family: "Fira Sans", sans-serif;
 }
 
 .portfolio-section h2 {
@@ -267,12 +309,14 @@ html {
     font-weight: 700;
     color: #1E1E1E;
     margin-bottom: 10px;
+    font-family: "Fira Sans", sans-serif;
 }
 
 .portfolio-section p {
     font-size: 16px;
     color: #555;
     margin-bottom: 40px;
+    font-family: "Fira Sans", sans-serif;
 }
 
 /* Portfolio Grid */
@@ -281,6 +325,7 @@ html {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     justify-content: center;
+    font-family: "Fira Sans", sans-serif;
 }
 
 /* Portfolio Items */
@@ -290,6 +335,7 @@ html {
     overflow: hidden;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
+    z-index: 50%;
 }
 
 .portfolio-item img {
@@ -297,24 +343,32 @@ html {
     height: auto;
     display: block;
 }
+/* #section-header_p{
+    max-width: 400px;
+} */
 
 .portfolio-info {
     position: absolute;
-    bottom: 0;
-    left: 0;
+    bottom: -30px;
+    left: 30px;
     right: 0;
     background: rgba(255, 255, 255, 0.9);
     padding: 15px;
     text-align: left;
+    z-index: 100%;
+    border-radius: 5px;
+    font-family: "Fira Sans", sans-serif;
 }
 
 .portfolio-info h3 {
     font-size: 18px;
     font-weight: bold;
     color: #1E1E1E;
+    font-family: "Fira Sans", sans-serif;
 }
 
 .portfolio-info p {
+    font-family: "Fira Sans", sans-serif;
     font-size: 14px;
     color: #555;
     margin-top: 5px;
@@ -334,6 +388,7 @@ html {
 
 /* Pricing Section */
 .pricing-section {
+    font-family: "Fira Sans", sans-serif;
     text-align: left;
     padding: 80px 10%;
     background: #F8F9FC;
@@ -343,10 +398,12 @@ html {
 }
 
 .pricing-content {
+    font-family: "Fira Sans", sans-serif;
     max-width: 500px;
 }
 
 .pricing-content h2 {
+    font-family: "Fira Sans", sans-serif;
     font-size: 36px;
     font-weight: 700;
     color: #1E1E1E;
@@ -354,6 +411,7 @@ html {
 }
 
 .pricing-content p {
+    font-family: "Fira Sans", sans-serif;
     font-size: 16px;
     color: #555;
     line-height: 1.6;
@@ -380,6 +438,7 @@ html {
 }
 
 .pricing-card h3 {
+    font-family: "Fira Sans", sans-serif;
     font-size: 16px;
     color: #444;
     font-weight: 700;
@@ -387,6 +446,7 @@ html {
 }
 
 .pricing-card h2 {
+    font-family: "Fira Sans", sans-serif;
     font-size: 22px;
     font-weight: 700;
     color: #1E1E1E;
@@ -394,6 +454,7 @@ html {
 }
 
 .price {
+    font-family: "Fira Sans", sans-serif;
     font-size: 28px;
     color: #007BFF;
     font-weight: bold;
@@ -407,6 +468,7 @@ html {
 }
 
 .pricing-card ul li {
+    font-family: "Fira Sans", sans-serif;
     font-size: 14px;
     color: #555;
     margin: 5px 0;
@@ -414,6 +476,7 @@ html {
 
 /* Get Started Button */
 .btn {
+    font-family: "Fira Sans", sans-serif;
     display: inline-block;
     background: #007BFF;
     color: white;
@@ -456,6 +519,7 @@ html {
 }
 
 .team-header p {
+    font-family: "Fira Sans", sans-serif;
     font-size: 16px;
     color: #555;
     max-width: 600px;
@@ -493,12 +557,14 @@ html {
 }
 
 .team-member h3 {
+    font-family: "Fira Sans", sans-serif;
     font-size: 18px;
     font-weight: bold;
     color: #1E1E1E;
 }
 
 .team-member p {
+    font-family: "Fira Sans", sans-serif;
     font-size: 14px;
     color: #555;
     margin-top: 5px;
@@ -514,6 +580,7 @@ html {
 
 /* Testimonials Section */
 .testimonials-section {
+    font-family: "Fira Sans", sans-serif;
     text-align: center;
     padding: 80px 10%;
     background: #ffffff;
