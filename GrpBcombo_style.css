@@ -31,6 +31,12 @@ header {
     transition: background 0.3s ease;
 }
 
+@media (max-width: 480px){
+    ul li{
+        display: none;
+    }
+}
+
 header.scrolled{
     padding: 0.5rem 1rem;
 }
