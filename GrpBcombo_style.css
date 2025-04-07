@@ -31,24 +31,6 @@ header {
     transition: background 0.3s ease;
 }
 
-@keyframes header-color-change {
-    0%{background: #b3d1fa;}
-    10%{background: white;}
-    
-}
-@scroll-timeline header-scroll {
-    source: selector(body);
-    orientation: vertical;
-  }
-  
-  header {
-    animation: navbar-color-change linear forwards;
-    animation-timeline: navbar-scroll;
-  }
-
-
-
-
 header.scrolled{
     padding: 0.5rem 1rem;
 }
